@@ -10,10 +10,19 @@ let c : boolean[] = [true];
 }
 player.name = 1;*/
 
-const player : {
-    name:string,
-    age:number
-} = {
-    name: "yuri",
-    age: 25
+type Age = number;
+type Name = string;
+type Player = {
+    name:Name,
+    age?:Age
 }
+/*function playerMaker(name:string) {
+    return {
+        // object를 return 
+        name:name
+    }
+}*/
+const playerMaker = (name:string) : Player => ({name})
+const yuri = playerMaker("yuri")
+//yuri.name = ""
+yuri.age = 15
