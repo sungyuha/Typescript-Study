@@ -3,8 +3,8 @@ abstract class User {
     constructor (
         protected firstName: string,
         protected lastName: string,
-        //public nickname:string
-        protected nickname:string
+        public nickname:string
+        //protected  nickname:string
     ) {}
     abstract getNickName():void
 
