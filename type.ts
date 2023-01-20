@@ -16,6 +16,7 @@ interface Student {
     courseCompleted: boolean;
 }
 
+// 변환값늬 타입 지정 -> Student
 function getStuentDetails(studentID: number): Student
 {
     return {
