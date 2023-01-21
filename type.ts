@@ -48,4 +48,5 @@ function saveStuentDetails(student: Student): void
 }
 
 // 아무 문제 없이 컴파일
+// 위에 작성한 student1 
 saveStuentDetails(student1);
