@@ -20,10 +20,18 @@ interface Student {
     // 뱐화되는 객체의 구조를 타입으로 지정
     studentID:number;
     studentName:string;
-    age:number;
+    age?:number;
     gender:string;
     subject:string;
     courseCompleted: boolean;
+
+    // 메소드는 객체내에서 선언 된 함수
+
+    // addComment을 가진 메소드를 정의
+    // comment를 string value의 매게변수 파라미터를 가짐
+    // string 값을 반환하는 메소드
+    addComment (comment: string): string;
+    addComment: (comment: string) => string;
 }
 
 // 변환값늬 타입 지정 -> Student
@@ -33,7 +41,6 @@ function getStuentDetails(studentID: number): Student
         // 프로퍼티
         studentID: 123456,
         studentName: 'Mark',
-        age: 27,
         gender: 'male',
         subject: 'Node JS',
         courseCompleted: true
