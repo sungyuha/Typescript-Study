@@ -18,7 +18,7 @@ let student1 = {
 // 타입으로 사용되는 인터페이스
 interface Student {
     // 뱐화되는 객체의 구조를 타입으로 지정
-    studentID:number;
+    readonly studentID:number; // Readonly 프로퍼티는 읽기 전용 프로퍼티로 '객체 생성시 할당 된 프로퍼티의 값을 바꿀 수 없다.'
     studentName:string;
     age?:number;
     gender:string;
@@ -30,8 +30,9 @@ interface Student {
     // addComment을 가진 메소드를 정의
     // comment를 string value의 매게변수 파라미터를 가짐
     // string 값을 반환하는 메소드
-    addComment (comment: string): string;
-    addComment: (comment: string) => string;
+    // addComment (comment: string): string;
+    // 
+    addComment?: (comment: string) => string;
 }
 
 // 변환값늬 타입 지정 -> Student
@@ -49,9 +50,8 @@ function getStuentDetails(studentID: number): Student
 
 // 또 다른 함수를 추가, 새롭게 추가 된 함ㅅ는 파라미터로 학생의 정보를 받아서 그 정보를 저장하는 함수
 // 파라미터에 방금 전 선언한 Interface 인 Student 를 4개의 변수에 타입으로 지정 - 코드 재사용
-function saveStuentDetails(student: Student): void
-{
-
+function saveStuentDetails(student: Student): void{
+    // student.studentID = 11222;
 }
 
 // 아무 문제 없이 컴파일
