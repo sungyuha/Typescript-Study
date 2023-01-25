@@ -5,6 +5,14 @@ let gender:string = 'female';
 let subject:string = 'Javascript';
 let courseCompleted: boolean = false;
 
+// 열거형 (Enum) 과 리터럴 타입
+// Enum이란, 연관 된  아이템들을 함께 묶어서 표현 할 수 있는 수단
+// Enum을 선언하기 위해서는 키워드를 명시
+enum GenderType {
+    Male,
+    Female
+}
+
 // 오브젝트를 바깥에 새성하고 오브젝트의 이름을 assignment 에 패스
 let student1 = {
     studentID: 122233,
