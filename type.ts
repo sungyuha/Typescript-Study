@@ -18,7 +18,7 @@ let student1 = {
     studentID: 122233,
     studentName: 'Janet Jacksan',
     age: 30,
-    gender: 'female',
+    gender: GenderType.Female,
     subject: 'Mongo DB',
     courseCompleted: false
 }
@@ -29,7 +29,7 @@ interface Student {
     readonly studentID:number; // Readonly 프로퍼티는 읽기 전용 프로퍼티로 '객체 생성시 할당 된 프로퍼티의 값을 바꿀 수 없다.'
     studentName:string;
     age?:number;
-    gender:string;
+    gender:GenderType;
     subject:string;
     courseCompleted: boolean;
 
@@ -50,7 +50,7 @@ function getStuentDetails(studentID: number): Student
         // 프로퍼티
         studentID: 123456,
         studentName: 'Mark',
-        gender: 'male',
+        gender: GenderType.Male,
         subject: 'Node JS',
         courseCompleted: true
     };
