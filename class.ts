@@ -18,8 +18,8 @@
 // 객체들은 클래스를 통해서 만둘어 질 수 있음, 클래스는 객제의 뼈대, 설계도, 생산물
 
 
-// 클래스를 선언하기 위해 class
-// class는 let과 같은 키워드를 작성하지 않아도 됨
+// 2. 클래스를 선언하기 위해 class
+// 2-2. class는 let과 같은 키워드를 작성하지 않아도 됨
 class Employee {
 funName: string;
 age: number;
@@ -42,4 +42,32 @@ printEmployeeDetails = ():void => {
         ${this.hourlyRate * this.workingHoursPerWeek} 달러 이다.`)
     }
 }    
-// 클래스 속에서 정의 된 함수들은 클래스 내 정의 된 변수들에게 접근 가능
+/* 2-3. 클래스 속에서 정의 된 함수들은 클래스 내 정의 된 변수들에게 접근 가능. 그러므로 상대적으로 적은 매개변수를 가짐 */
+// 2-4. 매개변수를 많이 사용하면 쉬운 코드, 클론코드 사용 가눙해 유지보수 용이
+
+/* 클래스 내에 정의 된 변수 : 프로퍼티 (Property)
+클래스 내에 정의 된 함수 : 메소드(Method) */
+
+// 3. 오브젝트
+// 클래스의 인스턴트
+
+// 코드가 실행 되면 employee1 이라는 객체가 생성
+let employee1 = new Employee();
+// 코드 에디터에서 점을 찍고 p를 타이핑 하면 클래스의 메소드인 printEmployeeDetails 가 나타남
+// employee1 객체는 Employee를 뼈대로 삼아 만들어진 객체, Employee에 선언 된 프로퍼티와 메소드를 그대로 객체 자신에 프로퍼티와 메소드로 가지게 됨
+
+// 변수의 값을 할당해줘야 undifined가 안나옴
+employee1.funName = '민수';
+employee1.age = 28;
+employee1.jobTitle = '주니어 웹개발자';
+employee1.hourlyRate = 40;
+employee1.workingHoursPerWeek = 35;
+employee1.printEmployeeDetails();
+
+// 붕어빵처럼 동일한 객체 생성 가능
+let employee2 = new Employee();
+employee2.funName = '미래';
+employee2.age = 32;
+employee2.jobTitle = '프로덕트매니저 웹개발자';
+employee2.hourlyRate = 38;
+employee2.workingHoursPerWeek = 50;
