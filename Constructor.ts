@@ -24,12 +24,13 @@ class Employeee {
     }
 }    
 
-// 클래스를 통해서 객체를 생성할 때, Constructor(생성자)에 정의 된 Parameter (매개변수들)의 값이, Arguments 로 전ㄷ라 되어야 함
+// 클래스를 통해서 객체를 생성할 때, Constructor(생성자)에 정의 된 Parameter (매개변수들)의 값이, Arguments 로 (초기값리) 전달 되어야 함
 // let employeee1 = new Employeee(); -> 에러가 발생 . 이류는 바로 위에 작성
 
 let employeee1 = new Employeee('민수', 28, '주니어 개발자', 40, 35);
 
 employeee1.printEmployeeDetails();
+
 
 /* 모든 클래스는 Constructor(생성자)를 가짐
 
