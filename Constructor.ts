@@ -1,6 +1,6 @@
 // 1. Constructor(생성자) : 클래스 로부터 객체를 생성할 때, 호출되며, "객체의 초기화를 담당"
 class Employeee {
-    funName: string;
+    private funName: string;
     age: number;
     jobTitle: string;
     hourlyRate: number;
@@ -33,7 +33,7 @@ class Employeee {
 // let employeee1 = new Employeee(); -> 에러가 발생 . 이류는 바로 위에 작성
 
 let employeee1 = new Employeee('민수', 28, '주니어 개발자', 40, 35);
-
+//employeee1.funName = '헨리'; // -> private가 있으면 외부에서 접근 불가능하므로 에러 메시지 출력
 employeee1.printEmployeeDetails();
 
 let employeee2 = new Employeee('미나', 32, '프로젝트 매니저', 55, 35);
@@ -42,7 +42,6 @@ let employeee2 = new Employeee('미나', 32, '프로젝트 매니저', 55, 35);
 
 객체 지향 안에는 Constructor(생성자)가 있음  */
 
-
 // 2. Access Modifiers(접근 제한자)
 /* 클래스 속 멤버 변수(프로퍼티)와 메소드에 적응될 수 있는 키워드 -> 쿨래스 외부로 부터의 접근을 통제
 하므로 버그를 줄이고 코드의 안정성을 높여줌
@@ -50,7 +49,7 @@ let employeee2 = new Employeee('미나', 32, '프로젝트 매니저', 55, 35);
 - Private : 클래스 내에서만 접근가능. 클래스의 외부에서 접근 불가능 (비공개 멤버)
 - Protected : 클래스 내부, 그리고 상속 받은 자식 클래스에서 접근 가능
 
-* 타입스크립에서는 Public 멤버를 노출시키기 위해서 Public 키워드를 명시할 필요 없음
+* 타입스크립에서는 Public 멤버를 노출시키기 위해서 Public 키워드를 명시할 필요 없음. Access Modifiers가 명시되어 있지 않으면 Public으로 생각하면 됨
 */
 
 // 3. Getter 와 Setter
