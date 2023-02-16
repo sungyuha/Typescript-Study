@@ -1,6 +1,6 @@
 // 1. Constructor(생성자) : 클래스 로부터 객체를 생성할 때, 호출되며, "객체의 초기화를 담당"
 class Employeee {
-    private funName: string;
+    private _funName: string; // 클래스 내에서 멤버변수를 나타내는 fullName 앞에서 _ (underscore) 를 넣어줌
     age: number;
     jobTitle: string;
     hourlyRate: number;
@@ -22,9 +22,21 @@ class Employeee {
         this.workingHoursPerWeek = workingHoursPerWeek;
     }
 
+    // Getter 와 Setter -> Get 과 Set 키워드를 사용하여 Getter 와 Setter 를 선언 
+    get funName () {
+        // getter 불려질때 실행되는 코드 작성
+        return this._funName;
+    }
+
+    // 괄호 안에는 전달 될 매개변수와 타입을 기입
+    set funName (vlaue: string) {
+        // 중괄호 안에는 전달 될 매개변수의 값을 비공개 멤버값으로 재할당 하는 값으로 넣어줌
+        this._funName = vlaue;
+    }
+
     printEmployeeDetails = ():void => {
         // this.funName}는 상단에 선언 된 변수들을 가리킴
-        console.log(`${this.funName}의 작업은 ${this.jobTitle} 이고 일주일의 수업은 
+        console.log(`${this._funName}의 작업은 ${this.jobTitle} 이고 일주일의 수업은 
         ${this.hourlyRate * this.workingHoursPerWeek} 달러 이다.`)
     }
 }    
@@ -34,6 +46,13 @@ class Employeee {
 
 let employeee1 = new Employeee('민수', 28, '주니어 개발자', 40, 35);
 //employeee1.funName = '헨리'; // -> private가 있으면 외부에서 접근 불가능하므로 에러 메시지 출력
+
+// 새로운 메소드로 할당. setter 를 통해서 새로운 값이 출력 됨
+employeee1.funName = '헨리';
+
+// employeee1.funName은 get의 funName을 부르고 getter 속에 코드가 실행되어 비 비공개 값이 funAame 값이 리턴되어서 값이 출력 됨
+console.log(employeee1.funName);
+
 employeee1.printEmployeeDetails();
 
 let employeee2 = new Employeee('미나', 32, '프로젝트 매니저', 55, 35);
@@ -53,3 +72,5 @@ let employeee2 = new Employeee('미나', 32, '프로젝트 매니저', 55, 35);
 */
 
 // 3. Getter 와 Setter
+// 접근 불가능한 private를 접근 가능하게 만들기 위해 사용
+// Get 과 Set 키워드를 사용하여 Getter 와 Setter 를 선언 
