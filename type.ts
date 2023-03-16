@@ -56,7 +56,7 @@ function getStuentDetails(studentID: number): Student
     };
 }
 
-// 또 다른 함수를 추가, 새롭게 추가 된 함ㅅ는 파라미터로 학생의 정보를 받아서 그 정보를 저장하는 함수
+// 또 다른 함수를 추가, 새롭게 추가 된 함수는 파라미터로 학생의 정보를 받아서 그 정보를 저장하는 함수
 // 파라미터에 방금 전 선언한 Interface 인 Student 를 4개의 변수에 타입으로 지정 - 코드 재사용
 function saveStuentDetails(student: Student): void{
     // student.studentID = 11222;
