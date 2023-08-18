@@ -1,7 +1,7 @@
 import React from 'react';
 import { Restaurant } from './model/resturant';
 
-// interface를 사용해서 타입 생성
+// interface로 타입 지정
 interface OwnProps {
     info: Restaurant // info타입 지정
 }
