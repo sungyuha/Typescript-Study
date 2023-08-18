@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import Store from './Store';
-import {Restaurant} from "./model/resturant";
+import {Address, Restaurant} from "./model/resturant";
 
 // 레스토랑 정보
 // 아래처럼 객체형 타입은 직접 만들어줄 수 있음
@@ -23,10 +23,16 @@ const App:React.FC = () => { // 함수 컴포넌트 타입 지정 : React.FC
 
   // <>는 제네릭 문법, useState는 리액트 함수. useState를 부를때부터 타입 지정가능한데 그때 사용 가능한게 제네릭 문법임
   const [myResturant, setMyResturan] = useState<Restaurant>(data);
+
+  // 함수 타입스크립트로 정의
+  const changeAddress = (address:Address) => {
+    setMyResturan({...myResturant, address: address})
+  }
+
   return (
     <div className="App">
-      {/* info의 타입 */}
-      <Store info={myResturant} />
+      {/* info의 타입 */} {/* setMyResturan를 보내줌 */}
+      <Store info={myResturant} changeAddress={changeAddress} />
     </div>
   );
 }
