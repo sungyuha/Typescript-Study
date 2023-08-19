@@ -33,3 +33,6 @@ export type Menu = {
     category: string;
 }
 // 타입을 세분화하면 할 수록 좋음
+
+// type을 빼고 싶을 때 사용 // Omit는 빼기. 빼줌
+export type AddressWithoutZip = Omit<Address, 'zipCode'> // Address에서 zipCode를 빼주세욘

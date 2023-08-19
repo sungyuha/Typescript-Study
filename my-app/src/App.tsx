@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Store from './Store';
 import {Address, Restaurant} from "./model/resturant";
+import BestMenu from './BestMenu';
 
 // 레스토랑 정보
 // 아래처럼 객체형 타입은 직접 만들어줄 수 있음
@@ -29,10 +30,17 @@ const App:React.FC = () => { // 함수 컴포넌트 타입 지정 : React.FC
     setMyResturan({...myResturant, address: address})
   }
 
+  // 함수 
+  const showBestMenuName = (name: string) => {
+    return name;
+  }
+
   return (
     <div className="App">
       {/* info의 타입 */} {/* setMyResturan를 보내줌 */}
       <Store info={myResturant} changeAddress={changeAddress} />
+      {/* 최고의 메뉴를 보여주는 컴포넌트 */}
+      <BestMenu name='불고기피자' price={7000} category='피자' showBestMenuName={showBestMenuName} />
     </div>
   );
 }
