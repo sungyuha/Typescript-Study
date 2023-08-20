@@ -35,4 +35,8 @@ export type Menu = {
 // 타입을 세분화하면 할 수록 좋음
 
 // type을 빼고 싶을 때 사용 // Omit는 빼기. 빼줌
-export type AddressWithoutZip = Omit<Address, 'zipCode'> // Address에서 zipCode를 빼주세욘
+export type AddressWithoutZip = Omit<Address, 'zipCode'> // Address에서 zipCode를 빼주세요
+
+// Pick은 추가보단 선택해주세요
+// Restaurant의 category만 가져옴
+export type RestaurantOnlyCategory = Pick<Restaurant, 'category'>
