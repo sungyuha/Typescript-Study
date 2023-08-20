@@ -40,7 +40,9 @@ const App:React.FC = () => { // 함수 컴포넌트 타입 지정 : React.FC
       {/* info의 타입 */} {/* setMyResturan를 보내줌 */}
       <Store info={myResturant} changeAddress={changeAddress} />
       {/* 최고의 메뉴를 보여주는 컴포넌트 */}
-      <BestMenu name='불고기피자' price={7000} category='피자' showBestMenuName={showBestMenuName} />
+      {/* <BestMenu name='불고기피자' price={7000} category='피자' showBestMenuName={showBestMenuName} />  */}
+      {/* price를 제외하는 경우 */}
+      <BestMenu name='불고기피자' category='피자' showBestMenuName={showBestMenuName} />
     </div>
   );
 }
