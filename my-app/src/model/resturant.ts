@@ -25,6 +25,8 @@ export type Address = {
     city: string;
     detail: string;
     zipCode: number;
+    // ? : 있을수도 있고, 없을수도 있고 -> ?는 주의해서 사용하는게 좋음!
+    // zipCode?: number;
 }
 
 export type Menu = {
@@ -40,3 +42,13 @@ export type AddressWithoutZip = Omit<Address, 'zipCode'> // Address에서 zipCod
 // Pick은 추가보단 선택해주세요
 // Restaurant의 category만 가져옴
 export type RestaurantOnlyCategory = Pick<Restaurant, 'category'>
+
+// api에서 타입스크립트 사용법: 제네릭 문법 응용법
+export type ApiResponse<type> = { // type이 제네릭을 통해서 다이나믹하게 들어갈 수 있음
+    data: type[],
+    totalPage: number,
+    page: number
+}
+
+// api를 호출하고 싶을때
+export type RestaurantResponse = ApiResponse<Restaurant>
