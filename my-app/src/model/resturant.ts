@@ -52,3 +52,5 @@ export type ApiResponse<type> = { // type이 제네릭을 통해서 다이나믹
 
 // api를 호출하고 싶을때
 export type RestaurantResponse = ApiResponse<Restaurant>
+// api를 호출할적에 하단과 같이 구성할 수 있음
+export type MenuResponse = ApiResponse<Menu>
