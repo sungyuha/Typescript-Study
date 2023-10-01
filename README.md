@@ -5,4 +5,4 @@
 3. useState를 Typescript에 맞는 사용법
 4. 제네릭 문법
 5. interface로 Type 정의 & 함수 Typescript로 정의
-6. 트위터 클론코딩
+6. 공부중!
