@@ -1,7 +1,9 @@
 import {BsHouseFill, BsBellFill} from 'react-icons/bs';
 import {FaUser} from 'react-icons/fa';
+import {BiLogOut} from 'react-icons/bi';
 import SidebarLogo from './SidebarLogo';
 import SidebarItem from './SidebarItem';
+import SidebarTweetButton from './SidebarTweetButton';
 
 const Sidebar = () => {
     const items = [
@@ -37,6 +39,10 @@ const Sidebar = () => {
                             label={item.label}
                         />
                     ))}
+                    {/* onClick은 빈 문자열 반환, icon은 로그아웃, 로그아웃 라벨 지정 */}
+                    <SidebarItem onClick={() => {}} icon={BiLogOut} label='Logout' />
+                    {/* 로그아웃 항목 */}
+                    <SidebarTweetButton />
                 </div>
             </div>
         </div>
