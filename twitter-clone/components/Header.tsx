@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
+import { BiArrowBack } from "react-icons/bi";
 
 // 헤더에 대한 인터페이스 
 interface HeaderProps {
@@ -21,7 +22,20 @@ const Header:React.FC<HeaderProps> = ({label, showBackArrow}) => { // labal을 �
 
     return (
         <div className='border-b-[1px] border-neutral-800 p-5'>
-            <div>{showBackArrow}</div>
+            <div className='flex flex-row items-center gap-2'>
+                {/* 반횐 */}
+                {showBackArrow && (
+                    <BiArrowBack 
+                        onClick={handleBack} 
+                        color="white" 
+                        size={20} 
+                        className='
+                        cursor-pointer 
+                        hover:opacity-70 
+                        transition
+                    '/>
+                )}
+            </div>
             <h1 className='text-white text-xl font-semibold'>
                 {label}
             </h1>
