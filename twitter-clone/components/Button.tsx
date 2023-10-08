@@ -19,9 +19,21 @@ const Button: React.FC<ButtonProps> = ({
     outline 
 }) => {
     return (
-        <div>
+        <button
+            disabled={disabled}
+            onClick={onClick}
+            className={`
+                disabled:opacity-70
+                disabled:cursor-not-allowed
+                rounded-full
+                font-semibold
+                hover:opacity-80
+                transition
+                border-2
+            `}    
+        >
             {label}
-        </div>
+        </button>
     );
 }
 
